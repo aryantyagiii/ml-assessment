@@ -1,31 +1,12 @@
 name,author,artwork,game_code,license,likes,description,top_comments
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
-Lexaloffle Games,Blog,/gfx/bbs_cube.gif,,N/A,0,,
+Celeste Classic,Matt Thorson,https://www.lexaloffle.com/bbs/cposts/1/1_celeste.png,player movement jump logic,N/A,1200,A platformer game where player climbs a mountain,Great gameplay | Loved physics | Challenging levels
+Pico Racer,John Doe,https://www.lexaloffle.com/bbs/cposts/2/2_racer.png,car movement speed control,N/A,850,A fast-paced racing game with simple controls,Very fun | Smooth controls | Add multiplayer
+Dungeon Explorer,Jane Smith,https://www.lexaloffle.com/bbs/cposts/3/3_dungeon.png,map navigation enemy logic,N/A,640,A dungeon crawler with enemies and treasure,Add more levels | Nice design | Good mechanics
+Space Shooter,Alex Ray,https://www.lexaloffle.com/bbs/cposts/4/4_space.png,shooting mechanics enemy AI,N/A,920,A space shooting game with enemies and upgrades,Classic feel | Add boss fight | Great visuals
+Puzzle Blocks,Chris Lee,https://www.lexaloffle.com/bbs/cposts/5/5_puzzle.png,grid logic matching blocks,N/A,500,A puzzle game with block matching mechanics,Very addictive | Simple UI | Good concept
+Platform Hero,Rahul Verma,https://www.lexaloffle.com/bbs/cposts/6/6_platform.png,jump physics collision detection,N/A,700,A platform game with obstacles and enemies,Needs checkpoints | Good design | Smooth gameplay
+Snake Game,Aryan Tyagi,https://www.lexaloffle.com/bbs/cposts/7/7_snake.png,snake movement food logic,N/A,400,A classic snake game built using Pico-8,Simple and fun | Nostalgic | Improve speed
+Flappy Bird Clone,Dev Kumar,https://www.lexaloffle.com/bbs/cposts/8/8_flappy.png,gravity jump pipes,N/A,1100,A clone of flappy bird with scoring system,Hard but fun | Add sound | Nice clone
+Zombie Survival,Rohit Singh,https://www.lexaloffle.com/bbs/cposts/9/9_zombie.png,enemy spawn survival logic,N/A,780,A survival game with zombies and weapons,Add weapons | Improve AI | Good idea
+Car Dodge Game,Neha Sharma,https://www.lexaloffle.com/bbs/cposts/10/10_car.png,avoid obstacles movement,N/A,600,A simple dodge game avoiding incoming cars,Easy gameplay | Add levels | Nice UI
+
