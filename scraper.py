@@ -4,58 +4,62 @@ import pandas as pd
 from tqdm import tqdm
 import time
 
-BASE_URL = "https://www.lexaloffle.com/bbs/?cat=7#sub=2"  # example Pico-8 games
-
-headers = {
-    "User-Agent": "Mozilla/5.0"
-}
+BASE_URL = "https://www.lexaloffle.com/bbs/?cat=7#sub=2"
+HEADERS = {"User-Agent": "Mozilla/5.0"}
 
 games = []
 
 def get_soup(url):
     try:
-        res = requests.get(url, headers=headers, timeout=10)
+        res = requests.get(url, headers=HEADERS, timeout=10)
         return BeautifulSoup(res.text, "html.parser")
     except:
         return None
 
-def scrape_game_links():
+# ✅ STEP 1: Get REAL game links
+def get_game_links():
     soup = get_soup(BASE_URL)
-    if not soup:
-        return []
-
     links = []
-    for a in soup.select("a"):
+
+    for a in soup.select("a[href*='tid']"):
         href = a.get("href")
         if href and "tid=" in href:
-            full_url = "https://www.lexaloffle.com" + href
-            links.append(full_url)
+            full = "https://www.lexaloffle.com" + href
+            links.append(full)
 
     return list(set(links))[:100]
 
+# ✅ STEP 2: Extract proper data
 def extract_game(url):
     soup = get_soup(url)
     if not soup:
         return None
 
     try:
-        name = soup.select_one("title")
-        name = name.text.strip() if name else ""
+        # Title
+        title_tag = soup.find("title")
+        name = title_tag.text.split("::")[0].strip() if title_tag else ""
 
-        author = soup.select_one("a[href*='uid']")
-        author = author.text.strip() if author else ""
+        # Author
+        author_tag = soup.select_one("a[href*='uid']")
+        author = author_tag.text.strip() if author_tag else ""
 
-        artwork = soup.select_one("img")
-        artwork = artwork["src"] if artwork else ""
+        # Artwork
+        img_tag = soup.select_one("img[src*='bbs']")
+        artwork = img_tag["src"] if img_tag else ""
 
-        code = soup.select_one("code")
-        code = code.text[:500] if code else ""  # limit size
+        # Description
+        desc_tag = soup.select_one("meta[name='description']")
+        description = desc_tag["content"] if desc_tag else ""
 
-        description = soup.select_one("meta[name='description']")
-        description = description["content"] if description else ""
+        # Likes (approx)
+        likes = soup.text.count("❤️")
 
-        likes = soup.text.count("❤️")  # fallback
+        # Code (if exists)
+        code_tag = soup.find("code")
+        game_code = code_tag.text[:300] if code_tag else ""
 
+        # Comments
         comments = soup.select(".post")[:5]
         top_comments = [c.text.strip()[:100] for c in comments]
 
@@ -63,7 +67,7 @@ def extract_game(url):
             "name": name,
             "author": author,
             "artwork": artwork,
-            "game_code": code,
+            "game_code": game_code,
             "license": "N/A",
             "likes": likes,
             "description": description,
@@ -73,19 +77,18 @@ def extract_game(url):
     except:
         return None
 
-
 def main():
-    links = scrape_game_links()
+    links = get_game_links()
 
     for link in tqdm(links):
         data = extract_game(link)
         if data:
             games.append(data)
-        time.sleep(1)  # avoid blocking
+        time.sleep(1)
 
     df = pd.DataFrame(games)
     df.to_csv("games_dataset.csv", index=False)
-    print("✅ Dataset ready")
+    print("✅ Dataset improved and saved!")
 
 if __name__ == "__main__":
     main()
